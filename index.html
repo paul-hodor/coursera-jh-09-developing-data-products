@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products - August 2015</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products - August 2015">
+  <meta name="author" content="Huldbrand von Ringstetten">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products - August 2015</h1>
+    <h2>Project Pitch Slides</h2>
+    <p>Huldbrand von Ringstetten<br/>Idle Soul</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Developing an intuition for understanding linear transformations of vector spaces</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Linear transformations are a key topic in the mathematics of vector spaces.</p></li>
+<li><p>Given a vector \(\scriptsize v\) in an \(\scriptsize n\)-dimensional vector
+space \(\scriptsize V\), a linear transformation maps it to another vector
+\(\scriptsize v'\) in another space \(\scriptsize V'\) of dimension
+\(\scriptsize n\) or less. We can write the definition of the transformation
+mathematically as a function \(\scriptsize T:V\to V'\), where \(\scriptsize v'
+= T(v)\).</p></li>
+<li><p>The theory is abstract and applies to any type of vector space, but we can
+develop an intuition by considering particular examples of vector spaces that
+can be easily visulaized.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Real vector spaces</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The first step is to consider transformations in spaces of real numbers,
+i.e. \(\scriptsize T:R^n\to R^n\). In this case the transformation can be written
+as the matrix product: \[\scriptsize v' = Av\]</p></li>
+<li><p>We can take one step further and choose \(\scriptsize n = 2\), i.e. we consider
+vectors in the plane \(\scriptsize R^2\), which can be represented visually in a
+2-D plot.</p></li>
+<li><p>Computing the linear transformation in the plane is done as follows:</p></li>
+</ul>
+
+<p>\[\scriptsize
+v = \begin{pmatrix} x \\ y \end{pmatrix} ,
+A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}
+\]</p>
+
+<p>\[\scriptsize
+v' = Av = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} a_{11}x + a_{12}y \\
+a_{21}x + a_{22}y \end{pmatrix} = \begin{pmatrix} x' \\ y' \end{pmatrix}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Visualizing transformations of plane vectors</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To represent vectors visually, we plot a vector \(\tiny v = \begin{pmatrix} x \\
+y \end{pmatrix}\) as an arrow starting at the origin of an \(\scriptsize x, y\)
+coordinate system and having its tip at the point of coordinates \(\scriptsize
+(x,y)\). For example, let&#39;s have a look at vector \(\tiny v = \begin{pmatrix} 2 \\
+1 \end{pmatrix}\). Here are a few linear transformation applied to it:</p>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>RShiny app to visually explore transformations</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app allows setting of the 4 elements of matrix \(\scriptsize A\). The
+transformation matrix is then applied to a user-defined number of vectors evenly
+spaced around the origin. Thus the overall geometric effect of the
+transformation can be observed, and the relative influence of each element of
+\(\scriptsize A\) can be studied.</p>
+
+<p>View the app on <a
+href="https://moohbear.shinyapps.io/Developing_Data_Products_2015_08">
+shinyapps.io</a>.</p>
+
+<p><img src="assets/img/screenshot.png" alt="screenshot"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Developing an intuition for understanding linear transformations of vector spaces'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Real vector spaces'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Visualizing transformations of plane vectors'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='RShiny app to visually explore transformations'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

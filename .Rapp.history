@@ -1,0 +1,290 @@
+plot(log(x),log(x+300))
+plot(log(x),log(x)+5)
+plot(log(x),log(x*x))
+plot(log(x),log(x*x+30))
+plot(log(x),log(x*x+300))
+plot(log(x),log(x^5+300))
+plot(log(x),log(x^5+300000))
+208/8
+?lrtest
+??lrtest
+?anova
+?drop1
+?anova
+m1 = lm(mpg ~ as.factor(cyl) + wt - 1, data=mtcars)#
+m2 = lm(mpg ~ as.factor(cyl) + wt + as.factor(cyl)*wt - 1, data=mtcars)#
+anova(m1,m2)
+anova(m1,m2,test="Chisq")
+roject/'#
+setwd(rootdir)#
+Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")#
+Sys.setenv(PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin")#
+#
+library("rmarkdown")#
+render("project.Rmd")
+￼boxplot(mpg ~ am, xlab="Transmission (0 = Automatic, 1 = Manual)", ylab="MPG", main="Boxplot of MPG vs. Transmission")
+boxplot(mpg ~ am, xlab="Transmission (0 = Automatic, 1 = Manual)", ylab="MPG", main="Boxplot of MPG vs. Transmission")
+attach(mtcars)
+boxplot(mpg ~ am, xlab="Transmission (0 = Automatic, 1 = Manual)", ylab="MPG", main="Boxplot of MPG vs. Transmission")
+pairs(mtcars, panel=panel.smooth, main="Pair Graph of Motor Trend Car Road Tests")
+ggplot(mtcars, aes(x=wt, y=mpg, group=am, color=am, height=3, width=3)) + geom_point() +#
+scale_colour_discrete(labels=c("Automatic", "Manual")) +#
+xlab("weight") + ggtitle("Scatter Plot of MPG vs. Weight by Transmission")
+library(ggplot2)
+ggplot(mtcars, aes(x=wt, y=mpg, group=am, color=am, height=3, width=3)) + geom_point() +#
+scale_colour_discrete(labels=c("Automatic", "Manual")) +#
+xlab("weight") + ggtitle("Scatter Plot of MPG vs. Weight by Transmission")
+?step
+library(swirl)
+swirl()
+plot(child ~ parent, galton)
+plot(jitter(child,4) ~ parent,galton)
+regrline <- lm(child ~ parent, galton)
+abline(regrline, lwd=3,#
+| col='red')
+abline(regrline, lwd=3, col="red")
+summary(regrline)
+lm(child~parent,data=galton)
+fit<-lm(child~parent,data=galton)
+summary(fit)
+mean(fit$residuals)
+cov(fit$residuals, galton$parent)
+ols.ic <- fit$coef[1]
+ols.slope <- fit$coef[2]
+lhs-rhs
+all.equal(lhs,rhs)
+varChild <- var(galton$child)
+varRes <- var(fit$residuals)
+varEst=est(fit)
+?est
+varEst=var(est)
+varEst=var(est())
+varEst=var(est(fit))
+varEst=var(est(ols.slope,ols.ic))
+varEst <- var(est(ols.slope,ols.ic))
+varChild
+all.equal(varChild,varRes+VarEst)
+all.equal(varChild,varRes+varEst)
+efit <- lm(accel ~ mag+dist, attenu)
+mean(efit$residuals)
+cov(fit$residuals,attenu$meg)
+fit$residuals
+cov(efit$residuals,attenu$meg)
+cov(efit$residuals,attenu$mag)
+cov(efit$residuals,attenu$dist)
+cor(gpa_nor,gch_nor)
+l_nor <- lm(gch_nor~gpa_nor)
+ones <- rep(1, nrow(galton))
+lm(child ~ ones + parent -1, galton)
+lm(child ~ parent, galton)
+lm(child ~ 1, galton)
+head(trees)
+fit <- lm(Volume ~ Girth + Height + Constant -1, trees)
+trees2 <- eliminate("Girth", trees)
+head(trees2)
+fit2 <- lm(Volume ~ Height + Constant -1,trees2)
+lapply(list(fit, fit2), coef)
+all <- lm(Fertility ~ . ,swiss)
+summary(all)
+summary(lm(Fertility~Agriculture,swiss))
+cor(Examination,Education,data=swiss)
+cor(swiss$Examination,swiss$Education)
+cor(swiss$Agriculture,swiss$Education)
+makelms()
+ec <- swiss$Examination + swiss$Catholic
+efit <- lm(Fertility ~ . + ec, swiss)
+all$coefficients - efit$coefficients
+ip <- as.data.frame(installed.packages()[,c(1,3:4)])#
+rownames(ip) <- NULL#
+ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]#
+print(ip, row.names=FALSE)
+library(manipulate)
+manipulate(plot(1:x,(1:x)*(1:x)),x=slider(1,100))
+?plot
+demo(plotmath)
+expression(x + y)*z)
+expression((x + y)*z)
+plot(expression((x + y)*z))
+?plotmath
+plot(text=expression((x + y)*z))
+plot(1,1)
+text(expression((x + y)*z))
+?text
+text(1,1,expression((x + y)*z))
+plot(1,1,type=NA)
+plot(1,1,pch="")
+text(1,1,expression((x + y)*z))
+demo(plotmath)
+text(1,1,expression(A = bgroup("(",atop(a ~~ b,c ~~ d),")")))
+plot(1,1,pch="")
+text(1,1,expression(A = bgroup("(",atop(a ~~ b,c ~~ d),")")))
+demo(plotmath)
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(",atop(a ~~ b,c ~~ d),")")))
+a = 3
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(",atop(a ~~ b,c ~~ d),")")))
+demo(plotmath)
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(","atop(a ~~ b,c ~~ d)",")")))
+text(1,1,expression(A == bgroup("(",atop(a ~~ b,c ~~ "d"),")")))
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(",atop(a ~~ b,c ~~ "d"),")")))
+text(1,1,expression(A == bgroup("(",atop(eval(a) ~~ b,c ~~ d),")")))
+?expression
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(","atop(a ~~ b,c ~~ d)",")")))
+plot(1,1,pch="")
+text(1,1,expression(A == bgroup("(",atop(a ~~ b,c ~~ d),")")))
+e = expression(A == bgroup("(",atop(a ~~ b,c ~~ d),")"))
+e
+str(e)
+e[1]
+e[[1]]
+e[[2]]
+?bquote
+plot(1,1,pch="")
+text(1,1,bquote(A == bgroup("(",atop(a ~~ b,c ~~ d),")")))
+text(1,1,bquote(A == bgroup("(",atop(.(a) ~~ b,c ~~ d),")")))
+plot(1,1,pch="")
+text(1,1,bquote(A == bgroup("(",atop(.(a) ~~ b,c ~~ d),")")))
+?mar
+?par
+plot(1,1,bty="n")
+plot(1,1,type="n")
+plot(1,1,type="n",axes=FALSE)
+plot(1,1,type="n",axes=FALSE,xlab="",ylab="")
+?text
+par(mar)
+par("mar")
+input = list(a11=11,a12=12,a21=21,a22=22)
+input
+tr = matrix(c(input$a11,input$a12,input$a21,input$a22),nrow=2)
+tr
+?matrix
+tr = matrix(c(input$a11,input$a12,input$a21,input$a22),#
+                nrow=2,byrow=TRUE)
+tr
+?fluidPage
+??fluiPage
+install.packages("shinythemes")
+?atop
+demo(plotmath)
+0.34 + 49 + 49 + 1.95
+search()
+data.frame(search())
+i = installed.packages()
+?rm
+dimnaes(i)
+dimnames(i)
+table(i$Priority)
+table(i[,"Priority"])
+i[i[,"Priority"] == "base",]
+i[,"Priority"] == "base"
+i[!is.na(i[,"Priority"]) & i[,"Priority"] == "base",]
+?autoload
+R_DEFAULT_PACKAGES
+env()
+Sys.getenv()
+options(defaultPackages)
+getOption("defaultPackages")
+?detach
+search()
+search()[grepl("^package:",search())]
+loaded = search()[grepl("^package:",search())]#
+default = paste0("package:",getOption("defaultPackages"))
+loaded
+default
+sort(loaded)
+sort(default)
+loaded = search()[grepl("^package:",search())]#
+default = paste0("package:",c("base",getOption("defaultPackages")))
+sort(loaded)
+sort(default)
+?detach
+search()[2]
+search()
+search() %in% default
+!(search() %in% default) & grepl("^package:",search())
+library(MASS)
+!(search() %in% default) & grepl("^package:",search())
+which()!(search() %in% default) & grepl("^package:",search()))
+which(!(search() %in% default) & grepl("^package:",search()))
+search()
+detach(which(!(search() %in% default) & grepl("^package:",search())),unload=TRUE)
+which(!(search() %in% default) & grepl("^package:",search()))
+detach(pos=which(!(search() %in% default) & grepl("^package:",search())),#
+       unload=TRUE)
+search()
+detach(pos=which(!(search() %in% default) & grepl("^package:",search())),#
+       unload=TRUE)
+?if
+?'if'
+?`if`
+rm(list=ls())#
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+pos = which(!(search() %in% default) & grepl("^package:",search()))#
+if (length(pos) > 0) detach(pos=pos, unload=TRUE)
+search()
+library(xlsx)
+search()
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+pos = which(!(search() %in% default) & grepl("^package:",search()))#
+if (length(pos) > 0) detach(pos=pos, unload=TRUE)
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+s = search()#
+loaded = s[grepl("^package:",s] & !(s %in% default)]
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+s = search()#
+loaded = s[grepl("^package:",s) & !(s %in% default)]
+loaded
+default
+search()
+if (length(loaded) > 0) lapply(loaded,detach(unload=TRUE))
+if (length(loaded) > 0) lapply(loaded,detach,unload=TRUE)
+loaded
+lapply(loaded,print)
+?lapply
+length(loaded) > 0
+search()
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+s = search()#
+loaded = s[grepl("^package:",s) & !(s %in% default)]#
+#
+if (length(loaded) > 0) lapply(loaded,detach,unload=TRUE)
+search()
+loaded
+lapply(loaded,print)
+detach(loaded[1],unload=TRUE)
+loaded[1]
+search()
+detach(unload=TRUE)
+search()
+detach(unload=TRUE)
+search()
+detach(unload=TRUE)
+search()
+?while
+``
+?`while`
+?`for`
+default = paste0("package:",c("base",getOption("defaultPackages")))#
+while (grepl("^package:",search()[2]) & !(search()[2] %in% default))#
+    detach(unload=TRUE)#
+#
+## remove any user-defined variables#
+rm(list=ls())#
+library(xlsx)
+?show
+install.packages("devtools")
+library(devtools)
+install_github('slidify','ramnathv')
+install_github('slidifyLibraries','ramnathv')
+library('slidify')
+setwd('/Volumes/paul/data/study/coursera/013.jh-09-developing-data-products/03.work/project/')
+author('pitch')
+pwd()
+getwd()
+slidify("index.Rmd")
+install_github('ramnathv/slidify', ref = github_pull(425))
+slidify("index.Rmd")
