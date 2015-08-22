@@ -10,4 +10,4 @@ browseURL("index.html")
 
 ## use the arrow keys to navigate slides
 
-publish(user="MoohBear", repo="coursera-jh-09developing-data-products")
+publish(user="MoohBear", repo="coursera-jh-09-developing-data-products")
